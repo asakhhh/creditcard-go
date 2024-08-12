@@ -90,7 +90,8 @@ func printHelp(opt string) {
 	} else if opt == "issue" {
 		helpIssue()
 	} else {
-		fmt.Printf("Incorrect option chosen: " + colorRed(os.Args[1]) + "\n")
+		fmt.Printf(colorRed("Error: ") + "incorrect option chosen - " + colorRed(os.Args[1]) + "\n")
 		fmt.Printf("Use './creditcard --help' for more information.\n")
+		os.Exit(1)
 	}
 }
