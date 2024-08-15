@@ -19,8 +19,12 @@ func main() {
 		fmt.Printf("Use './creditcard " + os.Args[1] + " --help' for more information.\n")
 		os.Exit(1)
 	} else if os.Args[1] == "validate" { // len >= 3 and valid option and not --help
+		validate()
 	} else if os.Args[1] == "generate" {
+		generate()
 	} else if os.Args[1] == "information" {
+		information()
 	} else {
+		issue()
 	}
 }
