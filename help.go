@@ -59,7 +59,7 @@ func helpInformation() {
 }
 
 func helpIssue() {
-	fmt.Printf(colorBlue("issue") + " - option for generating a random card number for a given brand and issuer.\n")
+	fmt.Printf(colorBlue("issue") + " - option for generating a random card number for a given brand and issuer.\n" + colorCyan("Note") + ": Exactly four mandatory flags should be specified without any other args.\n")
 	fmt.Println(toBold("usages:"))
 	fmt.Printf("./creditcard issue [flags]\n")
 	fmt.Printf("./creditcard issue --help\n\n")
