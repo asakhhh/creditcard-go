@@ -35,6 +35,6 @@ func isValid(entry string) bool {
 }
 
 func main() {
-	s := readline()
-	fmt.Println(isValid(s))
+	s := "aba"
+	fmt.Println(s[4:])
 }

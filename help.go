@@ -21,12 +21,16 @@ func colorCyan(s string) string {
 	return "\u001b[36m" + s + "\u001b[0m"
 }
 
+func colorPurple(s string) string {
+	return "\x1b[35m" + s + "\u001b[0m"
+}
+
 func valid(s string) bool {
 	return s == "validate" || s == "generate" || s == "information" || s == "issue"
 }
 
 func helpValidate() {
-	fmt.Printf(colorBlue("validate") + " - option for checking the validity of one or more credit cards. Evaluation is based on the Luhn algorithm.\nCard numbers should be entered in one line separated by a space.\n")
+	fmt.Printf(colorBlue("validate") + " - option for checking the validity of one or more credit cards. Evaluation is based on the Luhn algorithm.\n" + colorCyan("Note") + ": Card numbers should be entered in one line separated by a space.\n")
 	fmt.Println(toBold("usages:"))
 	fmt.Printf("./creditcard validate [number]...\t- prints OK or INCORRECT for entered card number(s).\n")
 	fmt.Printf("./creditcard validate --stdin\t\t- card numbers are read from standard input.\n")
@@ -34,7 +38,7 @@ func helpValidate() {
 }
 
 func helpGenerate() {
-	fmt.Printf(colorBlue("generate") + " - option for generating valid credit card numbers based on a given template. Prints all combinations by substituting digits for all asterisks" + colorRed(" (maximum 4)") + ".\n")
+	fmt.Printf(colorBlue("generate") + " - option for generating valid credit card numbers based on a given template. Prints all combinations by substituting digits for all asterisks.\n" + colorCyan("Note") + ": Template must have at most 4 asterisks, all at the end.\n")
 	fmt.Println(toBold("usages:"))
 	fmt.Printf("./creditcard generate <template>\t - outputs all possible combinations that satisfy the given template.\n")
 	fmt.Printf("./creditcard generate --pick <template>\t - randomly chooses one number that satisfies the given template.\n")
