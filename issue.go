@@ -101,7 +101,7 @@ func issue() {
 	for len(issuerPrefix) < length-1 {
 		issuerPrefix += string(rune('0' + rand.Int()%10))
 	}
-	last := (10 - checkSum(issuerPrefix)%10) % 10
+	last := (10 - checkSum(issuerPrefix+"0")%10) % 10
 	issuerPrefix += string(rune('0' + last))
 
 	fmt.Println(issuerPrefix)

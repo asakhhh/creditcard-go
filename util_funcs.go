@@ -45,12 +45,12 @@ func split(inp string, sep rune) []string {
 
 func checkSum(entry string) int {
 	sm := 0
-	p := 2
-	for _, c := range entry {
-		if c < '0' || c > '9' {
+	p := 1
+	for i := len(entry) - 1; i >= 0; i-- {
+		if entry[i] < '0' || entry[i] > '9' {
 			return -1
 		}
-		modified := int(c-'0') * p
+		modified := int(entry[i]-'0') * p
 		if modified >= 10 {
 			modified = modified/10 + modified%10
 		}

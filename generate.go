@@ -8,7 +8,7 @@ import (
 
 func generatedNumbers(template string) []string {
 	if template[len(template)-2] != '*' && template[len(template)-1] == '*' {
-		last := rune('0' + (10-checkSum(template[:len(template)-1])%10)%10)
+		last := rune('0' + (10-checkSum(template[:len(template)-1]+"0")%10)%10)
 		return []string{template[:len(template)-1] + string(last)}
 	}
 	var res []string
