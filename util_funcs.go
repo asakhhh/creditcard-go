@@ -20,7 +20,7 @@ func color(s, col string) string {
 	return col + s + reset
 }
 
-func valid(s string) bool {
+func validOption(s string) bool {
 	return s == "validate" || s == "generate" || s == "information" || s == "issue"
 }
 
