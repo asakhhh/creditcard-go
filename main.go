@@ -15,7 +15,7 @@ func main() {
 	} else if !valid(os.Args[1]) || (len(os.Args) >= 3 && os.Args[2] == "--help") {
 		printHelp(os.Args[1])
 	} else if len(os.Args) == 2 {
-		fmt.Printf(colorRed("Error: ") + "no flags provided.\n")
+		fmt.Printf(colorRed("Error: ") + "no args provided.\n")
 		fmt.Printf("Use './creditcard " + os.Args[1] + " --help' for more information.\n")
 		os.Exit(1)
 	} else if os.Args[1] == "validate" { // len >= 3 and valid option and not --help

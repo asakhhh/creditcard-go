@@ -26,11 +26,11 @@ func valid(s string) bool {
 }
 
 func helpValidate() {
-	fmt.Printf(colorBlue("validate") + " - option for checking the validity of one or more credit cards. Evaluation is based on the Luhn algorithm.\n")
+	fmt.Printf(colorBlue("validate") + " - option for checking the validity of one or more credit cards. Evaluation is based on the Luhn algorithm.\nCard numbers should be entered in one line separated by a space.\n")
 	fmt.Println(toBold("usages:"))
 	fmt.Printf("./creditcard validate [number]...\t- prints OK or INCORRECT for entered card number(s).\n")
 	fmt.Printf("./creditcard validate --stdin\t\t- card numbers are read from standard input.\n")
-	fmt.Printf("./creditcard validate --help\n")
+	fmt.Printf("./creditcard validate --help\t\t- prints help message for this option.\n")
 }
 
 func helpGenerate() {
@@ -38,7 +38,7 @@ func helpGenerate() {
 	fmt.Println(toBold("usages:"))
 	fmt.Printf("./creditcard generate <template>\t - outputs all possible combinations that satisfy the given template.\n")
 	fmt.Printf("./creditcard generate --pick <template>\t - randomly chooses one number that satisfies the given template.\n")
-	fmt.Printf("./creditcard generate --help\n")
+	fmt.Printf("./creditcard generate --help\t\t - prints help message for this option.\n")
 }
 
 func helpInformation() {
