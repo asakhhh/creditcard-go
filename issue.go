@@ -7,8 +7,6 @@ import (
 )
 
 func issue() {
-	var brandsFile, issuersFile, brandName, issuerName string
-
 	if len(os.Args) < 6 {
 		fmt.Printf(color("Error", red) + ": not enough arguments.\n")
 		fmt.Printf("Use './creditcard issue --help' for more information.\n")
@@ -19,6 +17,7 @@ func issue() {
 		os.Exit(1)
 	}
 
+	var brandsFile, issuersFile, brandName, issuerName string
 	for _, arg := range os.Args[2:] {
 		if len(arg) >= 11 && arg[:10] == "--issuers=" {
 			issuersFile = arg[10:]
