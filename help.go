@@ -46,26 +46,28 @@ func helpGenerate() {
 }
 
 func helpInformation() {
-	fmt.Printf(colorBlue("information") + " - option for getting info about the card number's validity, brand and issuer.\n")
+	fmt.Printf(colorBlue("information") + " - option for getting info about the card number's validity, brand and issuer.\n" + colorCyan("Note") + ": Both mandatory flags should come before the card numbers.\n")
 	fmt.Println(toBold("usages:"))
-	fmt.Printf("./creditcard information [--brands=FILE] [--issuers=FILE] [numbers]...\n")
+	fmt.Printf("./creditcard information [flags] [numbers]...\n")
+	fmt.Printf("./creditcard information [flags] --stdin\n")
 	fmt.Printf("./creditcard information --help\n\n")
 	fmt.Println(toBold("Flags:"))
-	fmt.Printf(toBold("--brands=FILE") + "\t- reads the list of brands from a file.\n")
-	fmt.Printf(toBold("--issuers=FILE") + "\t- reads the list of issuers from a file.\n")
+	fmt.Printf(toBold("--brands=FILE") + "\t- MANDATORY flag that provides the file containing the list of brands.\n")
+	fmt.Printf(toBold("--issuers=FILE") + "\t- MANDATORY flag that provides the file containing the list of issuers.\n")
+	fmt.Printf(toBold("--stdin") + "\t\t- card numbers are read from standard input.\n")
 	fmt.Printf(toBold("--help") + "\t\t- prints help message for this option.\n")
 }
 
 func helpIssue() {
 	fmt.Printf(colorBlue("issue") + " - option for generating a random card number for a given brand and issuer.\n")
 	fmt.Println(toBold("usages:"))
-	fmt.Printf("./creditcard issue [--brands=FILE] [--issuers=FILE] [--brand=] [--issuer=]\n")
+	fmt.Printf("./creditcard issue [flags]\n")
 	fmt.Printf("./creditcard issue --help\n\n")
 	fmt.Println(toBold("Flags:"))
-	fmt.Printf(toBold("--brands=FILE") + "\t- reads the list of brands from a file.\n")
-	fmt.Printf(toBold("--issuers=FILE") + "\t- reads the list of issuers from a file.\n")
-	fmt.Printf(toBold("--brand=") + "\t- specifies the brand of the card.\n")
-	fmt.Printf(toBold("--issuer=") + "\t- specifies the issuer of the card.\n")
+	fmt.Printf(toBold("--brands=FILE") + "\t- MANDATORY flag that provides the file containing the list of brands.\n")
+	fmt.Printf(toBold("--issuers=FILE") + "\t- MANDATORY flag that provides the file containing the list of issuers.\n")
+	fmt.Printf(toBold("--brand=") + "\t- MANDATORY flag that specifies the brand of the card.\n")
+	fmt.Printf(toBold("--issuer=") + "\t- MANDATORY flag that specifies the issuer of the card.\n")
 	fmt.Printf(toBold("--help") + "\t\t- prints help message for this option.\n")
 }
 
